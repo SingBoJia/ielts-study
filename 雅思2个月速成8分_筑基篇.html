@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2个月速成8分雅思 · 万字全流程学习+避坑指南（筑基篇）</title>
+<style>
+:root{
+  --ink:#1b1b1f; --ink-2:#3d3d46; --muted:#6b6b78;
+  --line:#e6e2da; --bg:#faf8f4; --card:#ffffff;
+  --brand:#6b4ee6; --brand-soft:#f1ecff;
+  --accent:#c2455c; --accent-soft:#fdeef0;
+  --green:#2f7a5b; --green-soft:#eaf6f0;
+  --radius:14px;
+  --maxw:820px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand); text-decoration:none; border-bottom:1px solid rgba(107,78,230,.28)}
+a:hover{border-bottom-color:var(--brand)}
+
+/* ===== 顶部封面 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(1200px 400px at 12% -10%, #ede7ff 0%, transparent 60%),
+    radial-gradient(900px 380px at 92% 0%, #ffe9ee 0%, transparent 55%),
+    linear-gradient(180deg,#ffffff 0%, #faf8f4 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{max-width:var(--maxw); margin:0 auto; padding:56px 24px 34px}
+.kicker{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13px; letter-spacing:.14em; font-weight:700; color:var(--brand);
+  background:var(--brand-soft); border:1px solid #ded3ff;
+  padding:6px 12px; border-radius:999px; margin-bottom:20px;
+}
+.kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+h1{
+  font-size:clamp(26px,4.4vw,40px); line-height:1.3; letter-spacing:-.01em;
+  margin:0 0 14px; font-weight:800;
+}
+h1 .hl{
+  background:linear-gradient(transparent 62%, #d9cdff 62%);
+  padding:0 2px;
+}
+.sub{font-size:17px; color:var(--ink-2); margin:0 0 26px; max-width:64ch}
+.byline{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; font-size:14px; color:var(--muted)}
+.byline b{color:var(--ink); font-weight:700}
+.byline .sep{width:1px;height:14px;background:var(--line)}
+.cover{
+  margin:34px 0 0; border-radius:var(--radius); overflow:hidden;
+  border:1px solid var(--line); background:#fff;
+  box-shadow:0 18px 40px -28px rgba(27,27,31,.5);
+}
+.cover img{display:block; width:100%; height:auto}
+
+/* ===== 正文容器 ===== */
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px 90px}
+
+/* ===== 目录 ===== */
+.toc{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px 26px; margin:-26px 0 48px; position:relative; z-index:2;
+  box-shadow:0 14px 34px -30px rgba(27,27,31,.55);
+}
+.toc h2{font-size:14px; letter-spacing:.16em; color:var(--muted); margin:0 0 14px; font-weight:700}
+.toc ol{margin:0; padding-left:0; list-style:none}
+.toc li{margin:8px 0}
+.toc li a{display:flex; gap:12px; align-items:baseline; border-bottom:none; color:var(--ink); font-weight:600}
+.toc li a::before{
+  content:attr(data-n); font-variant-numeric:tabular-nums; flex:none; min-width:20px;
+  font-size:12px; color:var(--brand); font-weight:800; letter-spacing:.06em;
+}
+.toc li a:hover{color:var(--brand)}
+.toc .tag{font-size:12px; color:var(--muted); font-weight:500}
+
+/* ===== 标题层级 ===== */
+section{scroll-margin-top:24px}
+h2.sec{
+  font-size:clamp(21px,3vw,27px); font-weight:800; line-height:1.4;
+  margin:64px 0 8px; padding-top:26px; border-top:2px solid var(--ink);
+  display:flex; gap:14px; align-items:baseline;
+}
+h2.sec .num{
+  font-size:13px; font-weight:800; color:#fff; background:var(--ink);
+  padding:3px 9px; border-radius:6px; letter-spacing:.08em; flex:none;
+  transform:translateY(-3px);
+}
+h3{font-size:19.5px; font-weight:800; margin:40px 0 10px; line-height:1.5; display:flex; gap:10px; align-items:baseline}
+h3 .n{color:var(--brand); font-weight:800; font-size:15px; flex:none}
+h4{font-size:16.5px; font-weight:800; margin:28px 0 8px; color:var(--ink)}
+p{margin:0 0 16px}
+strong{font-weight:700}
+
+/* ===== 引用块 ===== */
+blockquote{
+  margin:22px 0; padding:16px 20px 16px 22px; background:var(--brand-soft);
+  border-left:4px solid var(--brand); border-radius:0 10px 10px 0; color:var(--ink-2);
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote.q-accent{background:var(--accent-soft); border-left-color:var(--accent)}
+
+/* ===== 卡片 / 提示 ===== */
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:20px 22px; margin:22px 0;
+}
+.card h4{margin-top:0}
+.card.tip{background:var(--green-soft); border-color:#cfe8dc}
+.card.tip h4{color:var(--green)}
+.card.warn{background:var(--accent-soft); border-color:#f6d6dc}
+.card.warn h4{color:var(--accent)}
+
+/* ===== 列表 ===== */
+ul.list, ol.list{margin:0 0 18px; padding-left:1.3em}
+ul.list li, ol.list li{margin:8px 0}
+ul.list li::marker{color:var(--brand)}
+
+/* ===== 表格 ===== */
+.table-wrap{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:var(--radius); background:#fff}
+table{border-collapse:collapse; width:100%; min-width:640px; font-size:15px}
+caption{caption-side:top; text-align:left; padding:16px 18px 6px; font-weight:800; font-size:15.5px}
+caption span{display:block; font-weight:500; font-size:13px; color:var(--muted); margin-top:4px}
+th,td{padding:11px 14px; border-bottom:1px solid var(--line); text-align:center}
+th{background:#f4f1ea; font-weight:800; font-size:14px; color:var(--ink-2); white-space:nowrap}
+td:first-child,th:first-child{text-align:left}
+tbody tr:nth-child(even){background:#fcfbf8}
+tbody tr:hover{background:#f7f4ff}
+td.score{font-variant-numeric:tabular-nums; font-weight:700}
+td.total{font-weight:800; color:var(--brand)}
+.pill{
+  display:inline-block; font-size:12.5px; font-weight:700; padding:2px 10px;
+  border-radius:999px; background:#f0ece3; color:#5a5648; white-space:nowrap;
+}
+.pill.hot{background:#fde5ea; color:#a83a4f}
+.pill.mid{background:#eae4ff; color:#5a3fd0}
+.note{font-size:13px; color:var(--muted); margin:10px 0 0}
+
+/* 资料分类表（文字版） */
+.res-list{overflow-x:auto; margin:22px 0; border:1px solid var(--line); border-radius:var(--radius); background:#fff}
+table.res{border-collapse:collapse; width:100%; min-width:600px; font-size:14.5px}
+table.res th,table.res td{text-align:left; vertical-align:top; padding:12px 14px; line-height:1.7; border-bottom:1px solid var(--line)}
+table.res th:nth-child(1){width:25%}
+table.res th:nth-child(2){width:43%}
+table.res th:nth-child(3){width:32%}
+table.res thead th{background:#f4f1ea; font-size:13.5px; color:var(--ink-2); white-space:normal}
+table.res tbody tr:last-child td{border-bottom:none}
+table.res td b{color:var(--ink); font-weight:800}
+table.res td:last-child{color:var(--ink-2)}
+table.res caption{padding:16px 16px 10px; text-align:left; font-size:15px; font-weight:800}
+
+/* ===== 图片 ===== */
+figure{margin:26px 0; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:12px; box-shadow:0 12px 28px -26px rgba(27,27,31,.5)}
+figure img{display:block; width:100%; height:auto; border-radius:8px}
+figcaption{font-size:13px; color:var(--muted); padding:10px 4px 2px; text-align:center}
+
+/* ===== 分数配置速查 ===== */
+.config-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:24px 0; align-items:stretch}
+.config{border:1px solid var(--line); background:#fff; border-radius:12px; padding:14px 14px 12px; position:relative; overflow:hidden; display:flex; flex-direction:column}
+.config::before{content:""; position:absolute; inset:0 auto 0 0; width:4px; background:var(--brand)}
+.config.g6::before{background:#8a93a0}.config.g65::before{background:#4a90c2}
+.config.g7::before{background:#2f7a5b}.config.g75::before{background:#c2455c}
+.config .t{font-size:13px; color:var(--muted); font-weight:700; letter-spacing:.06em}
+.config .big{font-size:28px; font-weight:800; line-height:1.2; margin:2px 0 6px; font-variant-numeric:tabular-nums}
+.config .scores{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:10px 0 4px}
+.config .scores div{background:#faf8f4; border-radius:8px; padding:6px 1px; text-align:center; font-size:11px; color:var(--muted)}
+.config .scores b{display:block; font-size:15px; line-height:1.3; color:var(--ink); font-variant-numeric:tabular-nums}
+.config .alt{font-size:11.5px; line-height:1.55; color:var(--muted); border-top:1px dashed #eeebe3; padding-top:8px; margin-top:12px}
+.config .alt b{display:block; color:var(--accent); font-variant-numeric:tabular-nums; font-weight:700; margin-top:1px}
+.config .small{font-size:12px; color:var(--muted); margin-top:8px; line-height:1.65}
+
+/* ===== 时间线 ===== */
+.timeline{list-style:none; margin:24px 0; padding:0 0 0 22px; border-left:2px dashed #ddd6c8}
+.timeline li{position:relative; margin:0 0 20px; padding-left:8px}
+.timeline li::before{content:""; position:absolute; left:-30px; top:9px; width:11px; height:11px; border-radius:50%; background:#fff; border:3px solid var(--brand)}
+.timeline .when{font-weight:800; font-size:14px; color:var(--brand); letter-spacing:.04em}
+
+/* ===== 结尾 ===== */
+.end{
+  margin:70px 0 0; padding:28px 26px; border-radius:var(--radius);
+  background:linear-gradient(135deg,#1b1b1f 0%, #2c2740 100%); color:#efeaf7;
+}
+.end h3{color:#fff; margin:0 0 10px; font-size:20px}
+.end p{color:#cfc8de; margin-bottom:12px}
+.end .next{display:inline-block; margin-top:6px; font-weight:800; color:#c8b6ff; border-bottom-color:rgba(200,182,255,.4)}
+
+.src{
+  margin:40px 0 0; padding-top:18px; border-top:1px solid var(--line);
+  font-size:13.5px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 16px;
+}
+.avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+
+/* 返回顶部 */
+.top{
+  position:fixed; right:22px; bottom:22px; width:44px; height:44px; border-radius:50%;
+  background:#1b1b1f; color:#fff; display:grid; place-items:center; font-size:16px;
+  border:none; cursor:pointer; opacity:0; pointer-events:none; transition:.25s;
+  box-shadow:0 10px 24px -12px rgba(0,0,0,.6);
+}
+.top.on{opacity:.92; pointer-events:auto}
+.top:hover{opacity:1; transform:translateY(-2px)}
+
+/* 平板：两列 */
+@media (max-width:760px){
+  .config-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* 移动端 */
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero-inner{padding:38px 18px 26px}
+  .wrap{padding:0 18px 70px}
+  .toc{padding:18px; margin-bottom:36px}
+  h2.sec{margin-top:52px}
+  blockquote{padding:14px 16px}
+  .card{padding:16px 16px}
+  .config-grid{grid-template-columns:1fr; gap:12px}
+  .config .scores div{padding:8px 2px; font-size:12px}
+  .config .scores b{font-size:16px}
+
+  /* 资料表转卡片 */
+  .res-list{overflow-x:visible; border:none; background:transparent}
+  table.res{display:block; min-width:0}
+  table.res thead{display:none}
+  table.res tbody,table.res tr,table.res td{display:block; width:auto}
+  table.res caption{display:block; text-align:left; padding:0 0 10px; font-size:14px; color:var(--muted)}
+  table.res tr{background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:10px}
+  table.res tbody tr:nth-child(even){background:#fff}
+  table.res td{padding:0 0 8px; border:none; font-size:14px}
+  table.res td:last-child{padding-bottom:0; color:var(--ink-2); border-top:1px dashed #eeebe3; padding-top:8px; margin-top:2px}
+  table.res td:nth-child(2)::before{content:"包含 · "; color:var(--muted); font-size:12px}
+  table.res td:nth-child(3)::before{content:"任务 · "; color:var(--brand); font-size:12px; font-weight:700}
+
+  /* 分数配置表：手机端转成卡片 */
+  .table-wrap{border:none; background:transparent}
+  table.score-table{display:block; min-width:0; font-size:13px}
+  table.score-table thead{display:none}
+  table.score-table tbody,table.score-table tr,table.score-table td{display:block; width:auto}
+  table.score-table caption{display:block; width:auto; padding:0 0 10px; font-size:15px}
+  table.score-table caption span{padding:0; font-size:12.5px; line-height:1.6}
+  table.score-table tr{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:6px; align-items:center;
+    background:#fff !important; border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; margin-bottom:10px;
+  }
+  table.score-table tbody tr:nth-child(even){background:#fff}
+  table.score-table td{padding:0; border:none; text-align:center; font-size:13px}
+  table.score-table td:nth-child(1){grid-column:1; text-align:left; font-size:19px; font-weight:800; color:var(--brand)}
+  table.score-table td:nth-child(2){grid-column:2 / 5; text-align:right}
+  table.score-table td:nth-child(3),
+  table.score-table td:nth-child(4),
+  table.score-table td:nth-child(5),
+  table.score-table td:nth-child(6){
+    background:#faf8f4; border-radius:8px; padding:7px 2px; line-height:1.35;
+    font-size:14px; font-weight:700; color:var(--ink);
+  }
+  table.score-table td:nth-child(3)::before{content:"听力"; display:block; font-size:11px; font-weight:600; color:var(--muted)}
+  table.score-table td:nth-child(4)::before{content:"阅读"; display:block; font-size:11px; font-weight:600; color:var(--muted)}
+  table.score-table td:nth-child(5)::before{content:"写作"; display:block; font-size:11px; font-weight:600; color:var(--muted)}
+  table.score-table td:nth-child(6)::before{content:"口语"; display:block; font-size:11px; font-weight:600; color:var(--muted)}
+  table.score-table td:nth-child(7){
+    grid-column:1 / -1; text-align:left; font-size:12.5px; font-weight:500; color:var(--muted);
+    border-top:1px dashed #eeebe3; margin-top:2px; padding-top:8px; line-height:1.6;
+  }
+  .note{padding:0 !important; font-size:12px; line-height:1.7}
+}
+
+/* 打印 */
+@media print{
+  body{background:#fff; font-size:12pt}
+  .hero{background:#fff}
+  .toc,.top{display:none}
+  figure,.card,.table-wrap{box-shadow:none; break-inside:avoid}
+  h2.sec{break-after:avoid}
+  a{color:inherit; border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker"><span class="dot"></span>雅思 · 筑基篇</div>
+    <h1>2个月速成8分雅思<br><span class="hl">万字手搓全流程保姆级学习 + 避坑指南</span></h1>
+    <p class="sub">从怎么定目标、怎么配分数，到听、阅、口、写四科的资料分类与每日任务拆解——给基础一般、时间有限的成年人一份可以直接照着执行的备考地图。</p>
+    <div class="byline">
+      <img class="avatar" src="assets/cover.jpg" alt="Sera 雅思成绩截图头像">
+      <span>作者 <b>Sera</b></span>
+      <span class="sep"></span>
+      <span>雅思 8.0 · 雅思工作室创始人</span>
+      <span class="sep"></span>
+      <span>2026-11-02</span>
+    </div>
+    <figure class="cover">
+      <img src="assets/cover.jpg" alt="雅思总分 8.0 成绩：听力 9.0、阅读 9.0、写作 7.0、口语 7.0">
+    </figure>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="toc" aria-label="目录">
+    <h2>本篇目录</h2>
+    <ol>
+      <li><a href="#intro" data-n="序">写在前面：为什么这篇值得看 <span class="tag">先看这里</span></a></li>
+      <li><a href="#goal" data-n="01">怎么定目标：高分性价比配置表</a></li>
+      <li><a href="#plan" data-n="02">怎么定计划：周期、资料与任务拆解</a></li>
+      <li><a href="#listening" data-n="03">听力：三类资料，三种任务</a></li>
+      <li><a href="#reading" data-n="04">阅读：技巧课 + 真题复盘</a></li>
+      <li><a href="#speaking" data-n="05">口语：Part 1 / 2 / 3 分开练</a></li>
+      <li><a href="#writing" data-n="06">写作：小作文七类 + 大作文技巧与素材</a></li>
+      <li><a href="#daily" data-n="07">把资料拆成每天的任务</a></li>
+      <li><a href="#pitfall" data-n="08">避坑清单：最常踩的 8 个坑</a></li>
+      <li><a href="#next" data-n="★">下一篇：进阶篇预告</a></li>
+    </ol>
+  </nav>
+
+  <section id="intro">
+    <h2 class="sec"><span class="num">序</span>写在前面</h2>
+    <p>如果你高考英语并不优秀、四六级擦边过，是已工作多年没碰英语的成年人，还是想在高中就拿到雅思成绩的初中生——那你学雅思的第一步，都应该看这篇。从怎么制定学习计划，到听、阅、口、写四科的详细技巧，手把手教你怎么速通 8 分。</p>
+    <p>先介绍一下自己：我是 Sera，雅思 8.0，雅思工作室创始人，带过上百个同学顺利出分。我自己的英语几乎是自学起来的，小镇做题家，语言教育资源贫瘠，摸索了很久，也走了很多弯路。所以今天想把我用时间、血泪换来的经验，毫无保留地分享出来。</p>
+    <div class="card tip">
+      <h4>这篇文章的定位</h4>
+      <p style="margin-bottom:0">不是「英语学习方法论」，而是一张<strong>可以直接执行的备考施工图</strong>：目标怎么定、分数怎么配、资料怎么分类、每天做什么、做到什么程度算完成。看完你应该能立刻写出自己的第一周计划。</p>
+    </div>
+  </section>
+
+  <section id="goal">
+    <h2 class="sec"><span class="num">01</span>怎么定目标</h2>
+
+    <h3><span class="n">1.1</span>最值得抄的分数配置表</h3>
+    <blockquote class="q-accent">
+      <p><strong>你的目标分数定得有多好，你出分就有多快。</strong></p>
+    </blockquote>
+    <p>很多人不理解，为什么「定目标」这么重要。有人说：我想拿 7 分，那四科都考 7 分不就行了？我想拿 6.5，四科都 6.5 不就行了？有什么好讲究的？</p>
+    <p>那么现在我告诉你：<strong>你所制定的目标，将直接影响你出分的快慢，以及达到目标要费多大劲。</strong>好目标，让你一两个月即可轻松出分；坏目标，达到同样的分数可能要耗你 4 个月甚至更久。</p>
+
+    <div class="table-wrap">
+      <table class="score-table">
+        <caption>雅思总分目标 · 高性价比分数配置
+          <span>按总分目标与单科小分要求，优先把分数堆在听力 / 阅读</span>
+        </caption>
+        <thead>
+          <tr><th>目标总分</th><th>适用情况</th><th>听力</th><th>阅读</th><th>写作</th><th>口语</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="score total">6.0</td><td><span class="pill">常规配置</span></td><td class="score">6.5</td><td class="score">6.5</td><td class="score">5.0</td><td class="score">5.0</td><td>—</td></tr>
+          <tr><td class="score total">6.0</td><td><span class="pill hot">卡单科小分 6</span></td><td class="score">6.0</td><td class="score">6.0</td><td class="score">6.0</td><td class="score">6.0</td><td>四科必须全部 ≥ 6</td></tr>
+          <tr><td class="score total">6.5</td><td><span class="pill">常规配置</span></td><td class="score">7.0</td><td class="score">7.0</td><td class="score">5.5</td><td class="score">5.0</td><td>—</td></tr>
+          <tr><td class="score total">6.5</td><td><span class="pill hot">卡单科小分 6</span></td><td class="score">6.5</td><td class="score">6.5</td><td class="score">6.0</td><td class="score">6.0</td><td>四科必须全部 ≥ 6</td></tr>
+          <tr><td class="score total">7.0</td><td><span class="pill">常规配置</span></td><td class="score">7.5</td><td class="score">7.5</td><td class="score">6.0</td><td class="score">5.5</td><td>—</td></tr>
+          <tr><td class="score total">7.0</td><td><span class="pill hot">卡单科小分 6</span></td><td class="score">7.0 / 7.5</td><td class="score">7.5 / 7.0</td><td class="score">6.0</td><td class="score">6.0</td><td>听阅双科总分 = 14.5</td></tr>
+          <tr><td class="score total">7.0</td><td><span class="pill mid">卡单科小分 6.5</span></td><td class="score">7.0</td><td class="score">7.0</td><td class="score">6.5</td><td class="score">6.5</td><td>四科必须全部 ≥ 6.5</td></tr>
+          <tr><td class="score total">7.5</td><td><span class="pill">常规配置</span></td><td class="score">8.0</td><td class="score">8.0</td><td class="score">6.5</td><td class="score">6.0</td><td>—</td></tr>
+          <tr><td class="score total">7.5</td><td><span class="pill hot">卡单科小分 6.5</span></td><td class="score">8.0 / 7.5</td><td class="score">7.5 / 8.0</td><td class="score">6.5</td><td class="score">6.5</td><td>听阅双科总分 = 15.5</td></tr>
+        </tbody>
+      </table>
+      <p class="note" style="padding:0 18px 14px">注：上表为性价比配置示例，实际备考仍需结合目标院校 / 项目的单科要求。</p>
+    </div>
+
+    <p>把这张表翻译成四张卡片，方便保存和对照：</p>
+    <div class="config-grid">
+      <div class="config g6">
+        <div class="t">目标总分</div>
+        <div class="big">6.0</div>
+        <div class="scores"><div>听力<b>6.5</b></div><div>阅读<b>6.5</b></div><div>写作<b>5.0</b></div><div>口语<b>5.0</b></div></div>
+        <div class="alt">卡小分 6<b>四科全 6.0</b></div>
+        <div class="small">四科和 23–24.5 即 6.0。</div>
+      </div>
+      <div class="config g65">
+        <div class="t">目标总分</div>
+        <div class="big">6.5</div>
+        <div class="scores"><div>听力<b>7.0</b></div><div>阅读<b>7.0</b></div><div>写作<b>5.5</b></div><div>口语<b>5.0</b></div></div>
+        <div class="alt">卡小分 6<b>听阅 6.5、口写 6.0</b></div>
+        <div class="small">四科和 25–26.5 即 6.5。</div>
+      </div>
+      <div class="config g7">
+        <div class="t">目标总分</div>
+        <div class="big">7.0</div>
+        <div class="scores"><div>听力<b>7.5</b></div><div>阅读<b>7.5</b></div><div>写作<b>6.0</b></div><div>口语<b>5.5</b></div></div>
+        <div class="alt">卡小分 6<b>听阅 7–7.5、口写 6</b>卡小分 6.5<b>四科全 6.5</b></div>
+        <div class="small">四科和 27–28.5 即 7.0。</div>
+      </div>
+      <div class="config g75">
+        <div class="t">目标总分</div>
+        <div class="big">7.5</div>
+        <div class="scores"><div>听力<b>8.0</b></div><div>阅读<b>8.0</b></div><div>写作<b>6.5</b></div><div>口语<b>6.0</b></div></div>
+        <div class="alt">卡小分 6.5<b>听阅 7.5–8、口写 6.5</b></div>
+        <div class="small">四科和 29–30.5 即 7.5。</div>
+      </div>
+    </div>
+
+    <h3><span class="n">1.2</span>为什么这样配单科分数</h3>
+
+    <h4>原因一：用最小的门槛分数，撬动最大的杠杆</h4>
+    <p>雅思总分是按四科平均分四舍五入得来的：四科总和在 <strong>23–24.5 → 总分 6.0</strong>，<strong>25–26.5 → 6.5</strong>，<strong>27–28.5 → 7.0</strong>，<strong>29–30.5 → 7.5</strong>，以此类推。</p>
+    <p>所以，你只需要达到最小的那个门槛——23、25、27、29——即可擦边拿到理想的 6.0 / 6.5 / 7.0 / 7.5。分数嘛，够用就行，多一分都是浪费。</p>
+
+    <h4>原因二：听阅目标永远比口写高 0.5–1.5 分</h4>
+    <p>中国考生普遍听阅强、口写弱。如果你的高考英语在 120 分以上、四六级擦边过，听阅大概在 <strong>5.5–6.5</strong>，但口写可能只有 <strong>5–5.5</strong>。所以推荐配置都是明显把分数压在听阅上，这样能显著减轻学习压力。</p>
+    <div class="card">
+      <h4>按这个思路走，会得到什么？</h4>
+      <ul class="list" style="margin-bottom:0">
+        <li>想拿 <strong>6.0</strong>：有手就行，不用额外努力；</li>
+        <li>想拿 <strong>6.5</strong>：基本可以不管听阅，集中练口写；</li>
+        <li>想拿 <strong>7.0 及以上</strong>：需要全科冲刺。</li>
+      </ul>
+    </div>
+
+    <h4>原因三：什么是「小分」，为什么会「卡小分」</h4>
+    <p>小分就是对四科各科分数的要求，多见于留学项目、移民政策、部分出差签证要求中。卡小分 6，即四科里每一门都必须 <strong>≥ 6</strong>；卡 6.5，即每一门都必须 <strong>≥ 6.5</strong>。具体要求请认真对照梦校或项目的官方说明，以减少重复考试的可能。</p>
+
+    <h4>原因四：最后一定要按个人情况微调</h4>
+    <p>有的人听阅差、口写好，那就把听阅目标调低、口写调高。有的人什么都不擅长，那就按这套配置走。具体多少，最终还是要结合自身情况来改——毕竟没有人比你自己更了解自己。</p>
+  </section>
+
+  <section id="plan">
+    <h2 class="sec"><span class="num">02</span>怎么定计划</h2>
+    <p>定好目标，接下来才是计划。制定任何计划——总计划、月计划、日计划——首先要理清三件事：<strong>备考时间多久？用什么资料？然后才是每天的具体安排。</strong></p>
+
+    <h3><span class="n">2.1</span>备考周期：单次不要超过三个月</h3>
+    <blockquote>
+      <p><strong>我不建议任何人的单次备考周期超过三个月。</strong></p>
+    </blockquote>
+    <p>所有人都应该清醒：雅思不是像高考那样需要三年高强度续航的学科，<strong>雅思是一个速成考试</strong>。「夫战，勇气也。一鼓作气，再而衰，三而竭。」备考超过三个月，别管学得怎么样、能不能达到目标分，都<strong>先去考试</strong>。三个月听着不长，但对绝大部分人来说已经接近坚持的极限。</p>
+    <p>更重要的是，你需要一场真实考试来查缺补漏、及时调整方向。很多学生考完才来找我说：老师，我考完才发现自己学的在考试里根本用不上——口语平时练习没注意时间把控；写作没限时，考场根本写不完；听力一次都没从头到尾听完一整套，考场根本反应不过来……</p>
+    <p><strong>你以为考场所需的必备素质你都练到了，其实是错开的。</strong>努力了几个月、以为方向全对、卯足了劲往前闯，结果差得远。所以最多到三个月，必须去考一次，就是为了校正方向、发现偏差。</p>
+
+    <div class="card warn">
+      <h4>但 2000 块一次的「查缺补漏」太贵了</h4>
+      <p style="margin-bottom:0">如果你预算充足，直接报名正式考试当然最好。如果想在考前获得接近真实的流程和环境，可以先用全真模拟系统练手：1V1 对标剑雅机考流程，并给出详细的模拟报告，把「第一次上考场」的意外成本降下来。<strong>（原文此处为作者工作室的模拟服务推广，本页保留其位置，不代为背书。）</strong></p>
+    </div>
+
+    <h3><span class="n">2.2</span>资料的选择：先分类，再安排</h3>
+    <p>在制定计划之前，先把手里的资料理清楚：<strong>雅思资料到底分成哪几类，每一类用来做什么？</strong>你得先知道自己有哪些东西要学，后面才能安排每天看哪节课、练哪些题、完成多少任务。</p>
+    <div class="card tip">
+      <h4>选资料的三条判断标准</h4>
+      <ul class="list" style="margin-bottom:0">
+        <li><strong>适配基础</strong>：只适合英语基础好的资料，对新手就是劝退；</li>
+        <li><strong>适配周期</strong>：有的适合长线慢学，有的只管速成但天花板只到 6.5；</li>
+        <li><strong>可执行</strong>：每份资料都要能对应到「今天做什么、做到什么程度」。</li>
+      </ul>
+    </div>
+    <p>市面上很多听起来很厉害的理论——各种「三棱镜」「八爪鱼」「线索串题法」——大多是新瓶装旧酒：概念包装得很高级，拆开看就是常识。别被标题唬住，判断标准只有一个：<strong>它能不能让你的某一天任务变得更具体。</strong></p>
+  </section>
+
+  <section id="listening">
+    <h2 class="sec"><span class="num">03</span>听力：三类资料，三种任务</h2>
+    <div class="res-list">
+      <table class="res">
+        <caption>听力资料三分类</caption>
+        <thead><tr><th>资料类别</th><th>具体包含什么</th><th>对应的学习任务</th></tr></thead>
+        <tbody>
+          <tr><td><b>① 听力语料库</b></td><td>常见场景词汇、词汇的发音与拼写、数字及日期等信息辨识</td><td>听写新词、订正拼写、复习错词、听音辨义</td></tr>
+          <tr><td><b>② 听力技巧课</b></td><td>各题型做题方法、读题与预测、定位答案、识别同义替换、利用读题时间、识别干扰信息，以及漏听后的处理方法</td><td>学习一节技巧课，完成对应题型练习</td></tr>
+          <tr><td><b>③ 真题练习与错题复盘资料</b></td><td>真题及音频、听力原文、答案解析、错题记录与复习方法</td><td>限时做题、分析错因、重听错题片段、整理替换表达、隔天复测</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span class="n">3.1</span>语料库要练到什么程度</h3>
+    <p>制定听力计划前，先弄清楚语料库要练到什么程度。听力词汇需要达到三个层次的要求：</p>
+    <ol class="list">
+      <li><strong>听到</strong>——有些人连听都听不到，录音放完了才说「嗯？没听到啊」；</li>
+      <li><strong>听到并知道是哪个词，但瞬时只反应出拼写</strong>——比如听到 priority，第一反应是它的拼写，而不是「优先权、优先级」；</li>
+      <li><strong>听到并知道是哪个词，但瞬时只反应出意思</strong>——知道 priority 是优先权，却忘了怎么正确拼写。</li>
+    </ol>
+    <p>所以练语料库的核心，是把<strong>声音、含义、拼写</strong>三者建立联系，减少「这个词我明明认识，考试时却没听出来或者没写对」的失分。</p>
+    <p>具体安排要看基础：听音辨词和拼写薄弱，就多安排听写和复习；已经熟练，就重点复习自己的错词，不一定每个人都要完整刷完某一本语料库。</p>
+
+    <h3><span class="n">3.2</span>技巧课要学什么</h3>
+    <p>听力技巧课解决的是：怎么读题、怎么预测、怎么抓答案、怎么分配注意力，以及<strong>遇到干扰信息和漏听时怎么处理</strong>。这里要明确一个目标：<strong>不必逐字听懂全文，也要学会抓住答题所需的信息。</strong></p>
+    <p>学完一节技巧课，就安排对应的题型练习，检查自己能不能真正用起来。</p>
+
+    <h3><span class="n">3.3</span>复盘：把错因分清楚</h3>
+    <p>做完题以后一定要留出复盘时间，把错因分类：</p>
+    <ul class="list">
+      <li>不认识这个词；</li>
+      <li>认识但没听出来（辨音问题）；</li>
+      <li>拼写错误；</li>
+      <li>漏听 / 跟丢位置；</li>
+      <li>误解题意；</li>
+      <li>被干扰信息误导。</li>
+    </ul>
+    <p>然后<strong>根据错因调整后面的任务</strong>：拼写有问题，就把错词加入后续听写；认识但没听出来，就重听对应片段、结合原文辨音；被干扰信息误导，就回到录音里找出信息发生变化的位置。</p>
+    <blockquote class="q-accent">
+      <p><strong>错因不是用来「记录」的，是用来「改下一天任务」的。</strong>只统计不改计划，等于白复盘。</p>
+    </blockquote>
+  </section>
+
+  <section id="reading">
+    <h2 class="sec"><span class="num">04</span>阅读：技巧课 + 真题复盘</h2>
+    <div class="res-list">
+      <table class="res">
+        <caption>阅读资料两分类</caption>
+        <thead><tr><th>资料类别</th><th>具体包含什么</th><th>对应的学习任务</th></tr></thead>
+        <tbody>
+          <tr><td><b>① 阅读技巧课</b></td><td>各题型做题步骤、定位方法、同义替换、句子理解、时间分配、常见误区与复盘方法</td><td>学习一节技巧课，整理做题步骤</td></tr>
+          <tr><td><b>② 真题练习与复盘资料</b></td><td>阅读真题、答案解析、原文中的答案依据、错题及词汇记录</td><td>完成题型专项或限时阅读，找出答案依据，分析错因</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>阅读需要学的课程主要就是技巧课，之后通过刷题把方法用起来。制定计划时，要把<strong>「看课」和「刷题复盘」分开安排</strong>。</p>
+    <ul class="list">
+      <li>看完一节课，做对应练习，确认自己能不能独立运用；</li>
+      <li>做完题，回到原文找到答案依据，弄清楚题目和原文是怎么对应的；</li>
+      <li>问自己：我为什么做错？是定位错、同义替换没认出来，还是句子没读懂？</li>
+    </ul>
+    <p>刚开始可以按技巧课进度安排题型专项，熟悉方法以后，再逐步加入限时阅读和整套练习。</p>
+    <div class="card tip">
+      <h4>阅读复盘的最小闭环</h4>
+      <p style="margin-bottom:0">每道错题写下三行：<strong>题目定位词 → 原文对应句 → 同义替换关系</strong>。三行写不出来，说明这道题不是「粗心」，而是方法没掌握。</p>
+    </div>
+  </section>
+
+  <section id="speaking">
+    <h2 class="sec"><span class="num">05</span>口语：按 Part 1 / 2 / 3 整理</h2>
+    <div class="res-list">
+      <table class="res">
+        <caption>口语资料四分法</caption>
+        <thead><tr><th>资料类别</th><th>具体包含什么</th><th>对应的学习任务</th></tr></thead>
+        <tbody>
+          <tr><td><b>① Part 1 高频基础话题资料</b></td><td>大家常说的「固定题」：家乡、住宅、学习或工作等；对应的常见问法、个人信息表达和回答展开方法</td><td>准备个性化内容，练习同一话题的不同问法</td></tr>
+          <tr><td><b>② Part 1 当季话题与答题技巧</b></td><td>当季整理题库中的新题及保留题；直接回答、补充原因、举例、描述细节等方法</td><td>练习若干问题，录音后修改并重答</td></tr>
+          <tr><td><b>③ Part 2 素材组织与串题技巧</b></td><td>人物、地点、物品、事件等素材；审题、准备笔记、组织叙述、展开细节，以及素材在不同题目间的调整</td><td>准备一个素材，完成一次计时回答，再适配相关题目</td></tr>
+          <tr><td><b>④ Part 3 思路拓展与语言衔接</b></td><td>观点展开、原因分析、举例、比较、影响、解决办法；常用讨论角度、衔接表达、自然的思考缓冲语</td><td>练习若干问题，用不同角度展开，复盘停顿与逻辑</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span class="n">5.1</span>Part 1：先把「关于自己」的内容备好</h3>
+    <p>先准备家乡、住宅、学习或工作这些高频基础话题，把跟自己有关的内容整理好，再练习不同问法下怎么回答。当季的其他话题，要学能迁移的答题方法：补充原因、举例、描述变化和细节。</p>
+    <p>安排任务时写具体：今天准备哪个话题、练几个问题、录几段回答、哪些回答需要修改后重说一遍。</p>
+
+    <h3><span class="n">5.2</span>Part 2：素材组织与串题</h3>
+    <p>要练的是<strong>素材组织和串题</strong>：准备时间里记什么、开口以后怎么展开、素材换到另一道题里该怎么调整，确保回答贴合题目。</p>
+    <p>所以计划里除了「准备素材」，还要安排<strong>计时开口练习</strong>，以及根据不同题目调整素材的练习——检查自己能不能把准备好的内容完整讲出来，而不是背完就断。</p>
+
+    <h3><span class="n">5.3</span>Part 3：思路角度 + 衔接语言</h3>
+    <p>要积累可以迁移的思考角度和回答结构：从个人、他人、社会、经济、环境等角度分析问题；同时练习衔接表达和 <strong>fillers</strong>（自然的思考缓冲语）。</p>
+    <p>这些表达能帮你争取短暂的思考时间，让回答衔接得更自然；「万能思路」则帮你在遇到陌生问题时找到切入点，但最后仍然要回应具体问题。</p>
+    <p>任务可以拆成：<strong>学一种展开方法 → 练几个对应问题 → 听录音检查停顿、逻辑和表达</strong>。</p>
+  </section>
+
+  <section id="writing">
+    <h2 class="sec"><span class="num">06</span>写作：小作文七类 + 大作文技巧与素材</h2>
+    <div class="res-list">
+      <table class="res">
+        <caption>写作资料三模块</caption>
+        <thead><tr><th>资料类别</th><th>具体包含什么</th><th>对应的学习任务</th></tr></thead>
+        <tbody>
+          <tr><td><b>① 小作文题型技巧资料</b></td><td>按七类整理：折线图、柱状图、饼图、表格、地图、流程图、混合图；学习各类题目的审题、概述、分组和具体描述方法</td><td>学习一种题型，练习概述或主体段，再完成整篇写作与修改</td></tr>
+          <tr><td><b>② 大作文写作技巧课</b></td><td>审题、识别题目要求、确定立场、不同题型的篇章结构、主体段论证和常见问题</td><td>完成审题练习、列提纲、写主体段或整篇作文</td></tr>
+          <tr><td><b>③ 大作文主题素材课</b></td><td>按教育、科技、环境、工作、健康、社会等主题整理观点、理由、例子和表达</td><td>学习一个主题，将素材用于具体题目的提纲或段落</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span class="n">6.1</span>小作文：按七类逐个攻破</h3>
+    <p>小作文按七类整理：<strong>折线图、柱状图、饼图、表格、地图、流程图、混合图</strong>。每一类都要掌握：怎么看图、怎么找主要特征、怎么写概述（Overview）、主体段怎么分组和描述。</p>
+    <p>任务安排可以是：先学一种题型 → 练概述或主体段 → 完成整篇写作 → 根据反馈修改。</p>
+
+    <figure>
+      <img src="assets/06-writing-task2.png" alt="小作文技巧讲义目录：题型判断与四段结构、动态图趋势词汇与句型、静态图占比排名比较">
+      <figcaption>小作文讲义的编排逻辑：先「题型判断 + 四段结构」，再分动态图（趋势、幅度、句型）与静态图（占比、排名、比较）</figcaption>
+    </figure>
+
+    <h3><span class="n">6.2</span>大作文：技巧和素材分开安排</h3>
+    <p><strong>技巧课</strong>要学的是：拿到一道题怎么审题、怎么确定立场、怎么搭结构、怎么把一个观点论证清楚。</p>
+    <p><strong>素材课</strong>按主题积累：教育、科技、环境、工作、健康、社会等，让你面对不同话题时有观点、有理由、也有合适的表达。</p>
+    <p>学完技巧，安排审题、列提纲或段落练习；学完一个主题的素材，尝试把它用到具体题目里。整篇写作之后，也要留出修改和重写的时间。</p>
+    <div class="card tip">
+      <h4>写作提分的真正来源</h4>
+      <p style="margin-bottom:0">不是「多写」，而是<strong>「写 → 得到针对性的反馈 → 改 → 重写同一篇」</strong>。同一道题改三遍，比分头写三道新题有效得多。</p>
+    </div>
+  </section>
+
+  <section id="daily">
+    <h2 class="sec"><span class="num">07</span>把资料拆成每天的任务</h2>
+    <figure>
+      <img src="assets/07-daily-plan.png" alt="1v1 专属日计划表示例：按日期、科目、时长、具体任务、状态排列">
+      <figcaption>日计划表示例：日期 / 星期 / 科目 / 时长 / 具体到「做哪几篇、哪几题、第几页」/ 完成状态</figcaption>
+    </figure>
+
+    <h3><span class="n">7.1</span>一个好的日任务长什么样</h3>
+    <p>比如「今天学听力」，可以进一步拆成：<strong>听写一组语料库并订正错词 ＋ 学习一节选择题技巧课 ＋ 完成一组配套题并分析错因。</strong></p>
+    <p>而不是写成「今天练听力 1 小时」——这种任务既不知道做没做，也不知道做到什么程度。</p>
+
+    <h3><span class="n">7.2</span>安排的三个变量</h3>
+    <div class="config-grid">
+      <div class="config">
+        <div class="t">变量 01</div>
+        <div class="big" style="font-size:20px">基础</div>
+        <div class="small">词汇量、辨音能力、语法准确度决定任务难度与配比。</div>
+      </div>
+      <div class="config">
+        <div class="t">变量 02</div>
+        <div class="big" style="font-size:20px">目标分</div>
+        <div class="small">目标 6.0 与 7.5 的任务密度、复盘深度完全不同。</div>
+      </div>
+      <div class="config">
+        <div class="t">变量 03</div>
+        <div class="big" style="font-size:20px">可用时间</div>
+        <div class="small">在职备考建议每天 1.5–2.5 小时，周末补长任务。</div>
+      </div>
+    </div>
+    <p>每天不用把所有模块都安排一遍，但<strong>每一项任务都要足够具体</strong>：今天完成什么、完成到什么程度、做完以后要复习和修改什么。</p>
+
+    <h3><span class="n">7.3</span>一个 8 周节奏的参考骨架</h3>
+    <ul class="timeline">
+      <li><span class="when">第 1–2 周｜筑基</span><br>语料库听写起步、听力/阅读技巧课各过一轮基础题型；口语 Part 1 高频话题逐个准备；小作文先学题型判断与四段结构。</li>
+      <li><span class="when">第 3–4 周｜专项</span><br>听阅按题型做专项，每个题型「学一节 → 练一组 → 复盘错因」；口语 Part 2 积累 8–10 个可迁移素材；大作文技巧课 + 每周 1 篇限时。</li>
+      <li><span class="when">第 5–6 周｜整合</span><br>开始整套限时练习（听力一次听完一整套、阅读 60 分钟三篇）；口语每周 2 次全流程录音；写作每周 1 小 1 大并重写。</li>
+      <li><span class="when">第 7–8 周｜模考与修正</span><br>每周 1–2 次全真模拟，按真实时间与流程；只改「模考暴露出来的问题」，不再开新资料；考前一周降低强度、稳住状态。</li>
+    </ul>
+  </section>
+
+  <section id="pitfall">
+    <h2 class="sec"><span class="num">08</span>避坑清单</h2>
+    <p>把原文里散落的提醒集中成一份清单，备考中随时对照：</p>
+    <div class="card warn">
+      <h4>最常踩的 8 个坑</h4>
+      <ol class="list" style="margin-bottom:0">
+        <li><strong>把四科目标定成一样。</strong>四科都 7 分的代价远高于「听力 7.5 + 阅读 7.5 + 写作 6 + 口语 5.5」。</li>
+        <li><strong>备考拖过三个月。</strong>没有真实考试校准方向，努力可能全部打偏。</li>
+        <li><strong>只统计错题，不改下一天任务。</strong>复盘的价值在于调整计划。</li>
+        <li><strong>语料库追求「刷完」。</strong>目标是声音—含义—拼写建立联系，不是翻完一本书。</li>
+        <li><strong>技巧课看完不练。</strong>看完不等于会用，必须配对应题型练习。</li>
+        <li><strong>口语只准备素材、不开口计时。</strong>考场卡的是时间控制和展开能力。</li>
+        <li><strong>写作只写不改。</strong>没有反馈和重写，错误会稳定复现。</li>
+        <li><strong>考前还在开新资料。</strong>最后两周只解决已暴露的问题。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="next">
+    <div class="end">
+      <h3>下一篇：进阶篇</h3>
+      <p>以上就是《2 个月速成 8 分雅思 · 万字手搓全流程学习 + 避坑指南》的第一篇<strong>《筑基篇》</strong>。第二篇《进阶篇》会继续层层拆分，手把手讲听、阅、口、写四科的全流程学习方法。</p>
+      <a class="next" href="https://x.com/Seramikimiki" target="_blank" rel="noopener">关注作者 @Seramikimiki →</a>
+    </div>
+  </section>
+
+  <div class="src">
+    <span>原文：<a href="https://x.com/Seramikimiki/status/2117319245180829775" target="_blank" rel="noopener">Sera on X ·《2个月速成8分雅思 万字手搓全流程保姆级学习+避坑指南（基础篇）》</a></span>
+    <span>发布：2026-11-02</span>
+    <span>本页为原文的本地阅读版整理，图片取自原文，版权归原作者所有。</span>
+  </div>
+
+</main>
+
+<button class="top" id="toTop" aria-label="返回顶部">↑</button>
+<script>
+  var btn = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('on', window.scrollY > 600);
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
